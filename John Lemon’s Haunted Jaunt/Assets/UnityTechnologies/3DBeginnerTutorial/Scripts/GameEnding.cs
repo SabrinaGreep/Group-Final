@@ -20,7 +20,7 @@ public class GameEnding : MonoBehaviour
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
-    float m_timeRemaining = 20;
+    float m_timeRemaining = 120;
     
     void OnTriggerEnter (Collider other)
     {
