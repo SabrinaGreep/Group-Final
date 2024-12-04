@@ -1121,22 +1121,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7105536292397814572, guid: 12d755a233240034ab4459623603d973, type: 3}
   m_PrefabInstance: {fileID: 2040757952}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &808616997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808616995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5750c81cdae278d4685cb101f340ce45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 808616998}
-  waypoints:
-  - {fileID: 453583637}
-  - {fileID: 54464377}
 --- !u!195 &808616998
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1159,6 +1143,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &808617003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808616995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ef9e809d533be4485d78a5f85e8bb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 808616998}
+  randomRadius: 10
+  randomWaitTimeMin: 2
+  randomWaitTimeMax: 5
 --- !u!1 &939319739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,7 +1766,12 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1089596527
+--- !u!4 &1089596528 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7105536292397814572, guid: 12d755a233240034ab4459623603d973, type: 3}
+  m_PrefabInstance: {fileID: 1089596524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1089596533
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1775,18 +1780,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1089596525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5750c81cdae278d4685cb101f340ce45, type: 3}
+  m_Script: {fileID: 11500000, guid: 78ef9e809d533be4485d78a5f85e8bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1089596526}
-  waypoints:
-  - {fileID: 278937972}
-  - {fileID: 159803561}
---- !u!4 &1089596528 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7105536292397814572, guid: 12d755a233240034ab4459623603d973, type: 3}
-  m_PrefabInstance: {fileID: 1089596524}
-  m_PrefabAsset: {fileID: 0}
+  randomRadius: 10
+  randomWaitTimeMin: 2
+  randomWaitTimeMax: 5
 --- !u!1 &1100382762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3436971989348924101, guid: e57ba8d8a8cc33b4691e88e795c8cec2, type: 3}
@@ -4830,7 +4830,12 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1538405794
+--- !u!4 &1538405795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7105536292397814572, guid: 12d755a233240034ab4459623603d973, type: 3}
+  m_PrefabInstance: {fileID: 1538405791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1538405800
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4839,20 +4844,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538405792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5750c81cdae278d4685cb101f340ce45, type: 3}
+  m_Script: {fileID: 11500000, guid: 78ef9e809d533be4485d78a5f85e8bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 1538405793}
-  waypoints:
-  - {fileID: 939319740}
-  - {fileID: 1707048860}
-  - {fileID: 511768573}
-  - {fileID: 1373500200}
---- !u!4 &1538405795 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7105536292397814572, guid: 12d755a233240034ab4459623603d973, type: 3}
-  m_PrefabInstance: {fileID: 1538405791}
-  m_PrefabAsset: {fileID: 0}
+  randomRadius: 10
+  randomWaitTimeMin: 2
+  randomWaitTimeMax: 5
 --- !u!1 &1583119894
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,7 +5515,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5270912062170317272
+--- !u!114 &5270912062170317277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5526,10 +5524,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5270912062160810512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5750c81cdae278d4685cb101f340ce45, type: 3}
+  m_Script: {fileID: 11500000, guid: 78ef9e809d533be4485d78a5f85e8bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 5270912062170317271}
-  waypoints:
-  - {fileID: 1583119895}
-  - {fileID: 243115868}
+  randomRadius: 10
+  randomWaitTimeMin: 2
+  randomWaitTimeMax: 5
