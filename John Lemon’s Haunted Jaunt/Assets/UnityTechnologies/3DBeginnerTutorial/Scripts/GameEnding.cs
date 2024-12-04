@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,11 +13,14 @@ public class GameEnding : MonoBehaviour
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
     public AudioSource caughtAudio;
+    public CanvasGroup timeUpImageCanvasGroup;
+    public TextMeshProUGUI timeRemaining;
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
     float m_Timer;
     bool m_HasAudioPlayed;
+    float m_timeRemaining = 20;
     
     void OnTriggerEnter (Collider other)
     {
@@ -33,6 +37,14 @@ public class GameEnding : MonoBehaviour
 
     void Update ()
     {
+        m_timeRemaining -= +Time.deltaTime;
+        if (m_timeRemaining >= 0f)
+        {
+            timeRemaining.text = "Time remaining: " + Mathf.Round(m_timeRemaining);
+        }
+
+        // TODO update text
+
         if (m_IsPlayerAtExit)
         {
             EndLevel (exitBackgroundImageCanvasGroup, false, exitAudio);
@@ -41,6 +53,11 @@ public class GameEnding : MonoBehaviour
         {
             EndLevel (caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
+        else if (m_timeRemaining < 0f)
+        {
+            EndLevel(timeUpImageCanvasGroup, true, caughtAudio);
+        }
+        
     }
 
     void EndLevel (CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
